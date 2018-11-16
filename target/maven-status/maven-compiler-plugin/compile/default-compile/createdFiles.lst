@@ -1,0 +1,3 @@
+org/apache/hadoop/examples/LSH$ShinglingReducer.class
+org/apache/hadoop/examples/LSH$ShinglingrMapper.class
+org/apache/hadoop/examples/LSH.class
