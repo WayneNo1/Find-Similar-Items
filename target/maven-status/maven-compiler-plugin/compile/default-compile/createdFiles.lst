@@ -1,3 +1,4 @@
-org/apache/hadoop/examples/LSH$ShinglingReducer.class
-org/apache/hadoop/examples/LSH$ShinglingrMapper.class
 org/apache/hadoop/examples/LSH.class
+org/apache/hadoop/examples/LSH$MinhashingMapper.class
+org/apache/hadoop/examples/LSH$ShinglingReducer.class
+org/apache/hadoop/examples/LSH$ShinglingMapper.class
