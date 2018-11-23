@@ -23,7 +23,7 @@ public class LSH {
   public static int MINHASH_COUNT = 100;  // Number of hash functions for Minhashing
   public static int LSH_BAND = 50;  // Number of bands for LSH
   public static int LSH_ROW = 2;  // Number of rows for LSH
-  public static int BAND_BUCKET = 30;  // Number of buckets for a band for LSH
+  public static int BAND_BUCKET = 20;  // Number of buckets for a band for LSH
 
   /* Mapper for Shingling on all the text files */
   /* Input: Text files */
@@ -332,7 +332,6 @@ public class LSH {
     /* Shingling on all the text files */
     /* Input: The directory of all the text files */
     /* Output: <output file>_1 */
-    /*
     Job job1 = new Job(conf, "Shingling");
     job1.setJarByClass(LSH.class);
     job1.setMapperClass(ShinglingMapper.class);
@@ -342,12 +341,10 @@ public class LSH {
     FileInputFormat.setInputPaths(job1, new Path(otherArgs[0]));
     FileOutputFormat.setOutputPath(job1, new Path(otherArgs[1] + "_1"));
     job1.waitForCompletion(true);
-    */
 
     /* Minhashing on the shingles to get the signatures */
     /* Input: <output file>_1 */
     /* Output: <output file>_2 */
-    /*
     Job job2 = new Job(conf, "Minhashing");
     job2.setJarByClass(LSH.class);
     job2.setMapperClass(MinhashingMapper.class);
@@ -357,12 +354,10 @@ public class LSH {
     FileInputFormat.setInputPaths(job2, new Path(otherArgs[1] + "_1"));
     FileOutputFormat.setOutputPath(job2, new Path(otherArgs[1] + "_2"));
     job2.waitForCompletion(true);
-    */
 
     /* Locality Sensitive Hashing on the signatures */
     /* Input: <output file>_2 */
     /* Output: <output file>_3 */
-    /*
     Job job3 = new Job(conf, "LSH");
     job3.setJarByClass(LSH.class);
     job3.setMapperClass(LSHMapper.class);
@@ -372,12 +367,10 @@ public class LSH {
     FileInputFormat.setInputPaths(job3, new Path(otherArgs[1] + "_2"));
     FileOutputFormat.setOutputPath(job3, new Path(otherArgs[1] + "_3"));
     job3.waitForCompletion(true);
-    */
 
     /* Get all the candidate pairs */
     /* Input: <output file>_3 */
     /* Output: <output file>_4 */
-    /*
     Job job4 = new Job(conf, "Candidate Pairs");
     job4.setJarByClass(LSH.class);
     job4.setMapperClass(CandidateMapper.class);
@@ -387,7 +380,6 @@ public class LSH {
     FileInputFormat.setInputPaths(job4, new Path(otherArgs[1] + "_3"));
     FileOutputFormat.setOutputPath(job4, new Path(otherArgs[1] + "_4"));
     job4.waitForCompletion(true);
-    */
 
     /* Calculate the similarity for each candidate pair, and sort them */
     /* Input: <output file>_4 */
