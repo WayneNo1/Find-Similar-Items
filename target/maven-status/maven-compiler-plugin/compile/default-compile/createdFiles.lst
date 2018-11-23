@@ -1,4 +1,10 @@
 org/apache/hadoop/examples/LSH.class
 org/apache/hadoop/examples/LSH$MinhashingMapper.class
-org/apache/hadoop/examples/LSH$ShinglingReducer.class
+org/apache/hadoop/examples/LSH$LSHReducer.class
+org/apache/hadoop/examples/LSH$LSHMapper.class
 org/apache/hadoop/examples/LSH$ShinglingMapper.class
+org/apache/hadoop/examples/LSH$SimilarityReducer.class
+org/apache/hadoop/examples/LSH$CandidateMapper.class
+org/apache/hadoop/examples/LSH$CandidateReducer.class
+org/apache/hadoop/examples/LSH$SimilarityMapper.class
+org/apache/hadoop/examples/LSH$ShinglingReducer.class
